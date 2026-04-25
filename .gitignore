@@ -3,11 +3,12 @@
 /backend/node_modules
 /backend/.pnp
 /backend/.env
-/abs-frontend/.env.example
 
-# dependencies
+# frontend
 /abs-frontend/node_modules
+/abs-frontend/.env.example
 /abs-frontend/.pnp
+/abs-frontend/.next
 .pnp.*
 .yarn/*
 !.yarn/patches

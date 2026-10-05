@@ -1,0 +1,754 @@
+{
+  "_readme": "EDIT THIS FILE to change anything on the website. All names, numbers, photos and reviews below are DUMMY content — replace them with your real details. Image paths start with /images (files live in the /public/images folder). Leave a value empty (\"\") to hide it.",
+  "company": {
+    "name": "ABS Builder's",
+    "shortName": "ABS",
+    "legalName": "ABS Builder's",
+    "tagline": "Engineering | Architectural | Interiors",
+    "disciplines": [
+      "Engineering",
+      "Architectural",
+      "Interiors"
+    ],
+    "foundedYear": 2013,
+    "phone": "+9779857055583",
+    "phoneDisplay": "9857055583",
+    "whatsapp": "9779857055583",
+    "email": "info@absbuilders.com.np",
+    "address": {
+      "street": "Traffic Chowk, Butwal-8",
+      "city": "Butwal",
+      "district": "Rupandehi",
+      "province": "Lumbini Province",
+      "postalCode": "32907",
+      "country": "Nepal",
+      "countryCode": "NP"
+    },
+    "geo": {
+      "lat": 27.7006,
+      "lng": 83.4483
+    },
+    "hours": {
+      "display": "Sun – Fri · 9:00 AM – 6:00 PM",
+      "schema": [
+        {
+          "days": [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
+    },
+    "mapsLink": "https://www.google.com/maps/search/?api=1&query=Butwal%2C+Rupandehi%2C+Nepal",
+    "mapEmbedUrl": "https://www.google.com/maps?q=Butwal%2C%20Rupandehi%2C%20Nepal&output=embed",
+    "social": {
+      "facebook": "https://www.facebook.com/absbuilders",
+      "instagram": "https://www.instagram.com/absbuilders",
+      "youtube": "https://www.youtube.com/@absbuilders",
+      "tiktok": "https://www.tiktok.com/@absbuilders",
+      "linkedin": ""
+    }
+  },
+  "seo": {
+    "siteUrl": "https://www.absbuilders.com.np",
+    "title": "ABS Builder's | Construction, Architecture & Interiors in Lumbini, Nepal",
+    "description": "ABS Builder's is a trusted engineering, architectural and interior design firm in Lumbini Province, Nepal. House construction, structural design, 3D architecture and turnkey interiors in Butwal, Bhairahawa, Taulihawa, Parasi and Ghorahi. Call 9857055583 for a free site visit.",
+    "keywords": [
+      "construction company in Butwal",
+      "construction company Rupandehi",
+      "house construction Nepal",
+      "architect in Butwal",
+      "civil engineering company Lumbini",
+      "interior designer Bhairahawa",
+      "building contractor Kapilvastu",
+      "house design Nawalparasi",
+      "construction company Dang Ghorahi",
+      "structural design Nepal",
+      "turnkey construction Nepal",
+      "ABS Builders"
+    ]
+  },
+  "nav": [
+    {
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "label": "Services",
+      "href": "#services"
+    },
+    {
+      "label": "Projects",
+      "href": "#projects"
+    },
+    {
+      "label": "Transformations",
+      "href": "#transformations"
+    },
+    {
+      "label": "Reviews",
+      "href": "#testimonials"
+    },
+    {
+      "label": "Areas",
+      "href": "#areas"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
+  ],
+  "hero": {
+    "eyebrow": "Serving Rupandehi · Kapilvastu · Nawalparasi · Dang",
+    "headline": {
+      "before": "We design, engineer & build the",
+      "highlight": "landmarks",
+      "after": "of Lumbini."
+    },
+    "subheading": "From the first sketch to the final handover — one accountable team for structural engineering, architectural design and turnkey interiors. Fixed-price estimates, on-site supervision, and work that is built to last.",
+    "image": "/images/projects/lumbini-heights-villa-1.webp",
+    "primaryCta": {
+      "label": "Get a Free Site Visit",
+      "href": "#contact"
+    },
+    "secondaryCta": {
+      "label": "View Our Projects",
+      "href": "#projects"
+    },
+    "assurances": [
+      "Free site visit & estimate",
+      "Reply within 24 hours",
+      "Warranty on workmanship"
+    ],
+    "liveProject": {
+      "title": "Lumbini Heights Villa",
+      "location": "Butwal, Rupandehi",
+      "progress": 82,
+      "label": "Project progress"
+    },
+    "rating": {
+      "score": "4.9",
+      "text": "Rated by 120+ happy clients"
+    }
+  },
+  "credentials": [
+    "Registered Construction Company",
+    "Licensed Engineers & Architects",
+    "Municipality-Approved Drawings",
+    "Quality-Tested Materials",
+    "Site Safety Compliant",
+    "Fixed-Price Contracts",
+    "On-Time Delivery",
+    "Warranty-Backed Workmanship"
+  ],
+  "stats": [
+    {
+      "value": 150,
+      "suffix": "+",
+      "label": "Projects completed"
+    },
+    {
+      "value": 12,
+      "suffix": "+",
+      "label": "Years of experience"
+    },
+    {
+      "value": 4,
+      "suffix": "",
+      "label": "Districts served"
+    },
+    {
+      "value": 45,
+      "suffix": "+",
+      "label": "Engineers, architects & site crew"
+    }
+  ],
+  "about": {
+    "eyebrow": "About ABS Builder's",
+    "title": "Built on engineering discipline. Finished with design sensibility.",
+    "paragraphs": [
+      "ABS Builder's is a Butwal-based construction and design firm delivering homes, commercial buildings, public infrastructure and interiors across Rupandehi, Kapilvastu, Nawalparasi and Dang.",
+      "We combine licensed structural engineers, architects and interior designers under one roof — so your drawings, budget and site work stay aligned from day one. No hand-offs between contractors, no surprises on the invoice."
+    ],
+    "highlights": [
+      {
+        "title": "One accountable team",
+        "text": "Design, engineering, construction and interiors under a single contract."
+      },
+      {
+        "title": "Transparent pricing",
+        "text": "Detailed BOQ and milestone-based payments you can verify."
+      },
+      {
+        "title": "Engineered to last",
+        "text": "Earthquake-resilient design with tested materials and supervised pours."
+      }
+    ],
+    "mission": "To make safe, beautiful, honestly-priced buildings accessible to every family and business in Lumbini Province.",
+    "image": "/images/misc/blueprint.webp",
+    "secondaryImage": "/images/misc/site-team.webp",
+    "founder": {
+      "name": "Er. A. B. Sharma",
+      "role": "Founder & Managing Director"
+    }
+  },
+  "services": [
+    {
+      "id": "engineering",
+      "title": "Engineering",
+      "kicker": "Civil · Structural · Infrastructure",
+      "description": "Seismic-resilient structural design and disciplined execution for buildings, roads, bridges and public works.",
+      "image": "/images/projects/tinau-river-bridge-1.webp",
+      "features": [
+        "Structural analysis & design",
+        "Turnkey building construction",
+        "Roads, bridges & culverts",
+        "Site survey & soil investigation",
+        "Detailed estimation & BOQ",
+        "Quality control & project management"
+      ]
+    },
+    {
+      "id": "architectural",
+      "title": "Architectural",
+      "kicker": "Design · Planning · Visualisation",
+      "description": "Thoughtful residential and commercial design — photoreal 3D previews and municipality-ready drawings.",
+      "image": "/images/projects/lumbini-heights-villa-1.webp",
+      "features": [
+        "Residential & commercial design",
+        "3D renders & walkthroughs",
+        "Working drawings & approvals",
+        "Site & landscape planning",
+        "Renovation & extension design",
+        "Climate-responsive planning"
+      ]
+    },
+    {
+      "id": "interiors",
+      "title": "Interiors",
+      "kicker": "Fit-out · Furniture · Finishing",
+      "description": "Interiors that feel considered and live well — from modular kitchens to complete turnkey fit-outs.",
+      "image": "/images/projects/sunrise-residence-interior-1.webp",
+      "features": [
+        "Space planning & concept design",
+        "Modular kitchens & wardrobes",
+        "Lighting & ceiling design",
+        "Custom furniture & joinery",
+        "Showroom & office interiors",
+        "Complete turnkey finishing"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "slug": "lumbini-heights-villa",
+      "title": "Lumbini Heights Villa",
+      "category": "architectural",
+      "type": "Residential",
+      "district": "Rupandehi",
+      "location": "Butwal-10, Rupandehi",
+      "year": 2025,
+      "area": "3,400 sq ft",
+      "duration": "11 months",
+      "status": "Completed",
+      "summary": "A contemporary two-storey family villa with a cantilevered upper volume, full-height glazing and a landscaped courtyard — designed to stay cool through the Terai summer.",
+      "scope": [
+        "Architectural design",
+        "Structural design",
+        "Turnkey construction",
+        "Landscape"
+      ],
+      "images": [
+        "/images/projects/lumbini-heights-villa-1.webp",
+        "/images/projects/lumbini-heights-villa-2.webp",
+        "/images/projects/lumbini-heights-villa-3.webp"
+      ]
+    },
+    {
+      "slug": "butwal-trade-tower",
+      "title": "Butwal Trade Tower",
+      "category": "engineering",
+      "type": "Commercial",
+      "district": "Rupandehi",
+      "location": "Traffic Chowk, Butwal",
+      "year": 2024,
+      "area": "28,000 sq ft",
+      "duration": "18 months",
+      "status": "Completed",
+      "summary": "A 9-storey mixed-use commercial complex with retail podium, offices above and basement parking, engineered to current seismic code.",
+      "scope": [
+        "Structural engineering",
+        "Construction",
+        "MEP coordination",
+        "Project management"
+      ],
+      "images": [
+        "/images/projects/butwal-trade-tower-1.webp",
+        "/images/projects/butwal-trade-tower-2.webp",
+        "/images/projects/butwal-trade-tower-3.webp"
+      ]
+    },
+    {
+      "slug": "tinau-river-bridge",
+      "title": "Tinau Riverside Bridge",
+      "category": "engineering",
+      "type": "Infrastructure",
+      "district": "Rupandehi",
+      "location": "Tinau Riverfront, Butwal",
+      "year": 2023,
+      "area": "186 m span",
+      "duration": "14 months",
+      "status": "Completed",
+      "summary": "A multi-span river crossing with pre-stressed girders and a cable-stayed pedestrian pylon, built with scour-resistant foundations.",
+      "scope": [
+        "Bridge design",
+        "Foundation works",
+        "Girder launching",
+        "Quality assurance"
+      ],
+      "images": [
+        "/images/projects/tinau-river-bridge-1.webp",
+        "/images/projects/tinau-river-bridge-2.webp",
+        "/images/projects/tinau-river-bridge-3.webp"
+      ]
+    },
+    {
+      "slug": "kapilvastu-heritage-school",
+      "title": "Heritage Public School",
+      "category": "engineering",
+      "type": "Institutional",
+      "district": "Kapilvastu",
+      "location": "Taulihawa, Kapilvastu",
+      "year": 2024,
+      "area": "21,500 sq ft",
+      "duration": "12 months",
+      "status": "Completed",
+      "summary": "A three-block school campus with 24 classrooms, science labs and a library — planned around cross-ventilation and natural daylight.",
+      "scope": [
+        "Master planning",
+        "Structural design",
+        "Construction",
+        "Site works"
+      ],
+      "images": [
+        "/images/projects/kapilvastu-heritage-school-1.webp",
+        "/images/projects/kapilvastu-heritage-school-2.webp",
+        "/images/projects/kapilvastu-heritage-school-3.webp"
+      ]
+    },
+    {
+      "slug": "sunrise-residence-interior",
+      "title": "Sunrise Residence Interiors",
+      "category": "interiors",
+      "type": "Residential Interior",
+      "district": "Kapilvastu",
+      "location": "Krishnanagar, Kapilvastu",
+      "year": 2025,
+      "area": "2,600 sq ft",
+      "duration": "4 months",
+      "status": "Completed",
+      "summary": "A warm, layered turnkey interior in navy, oak and brass — with a custom TV unit, modular kitchen and statement pendant lighting.",
+      "scope": [
+        "Interior design",
+        "Custom joinery",
+        "Lighting design",
+        "Furniture styling"
+      ],
+      "images": [
+        "/images/projects/sunrise-residence-interior-1.webp",
+        "/images/projects/sunrise-residence-interior-2.webp",
+        "/images/projects/sunrise-residence-interior-3.webp"
+      ]
+    },
+    {
+      "slug": "dang-valley-resort",
+      "title": "Dang Valley Resort",
+      "category": "architectural",
+      "type": "Hospitality",
+      "district": "Dang",
+      "location": "Ghorahi, Dang",
+      "year": 2024,
+      "area": "16,000 sq ft",
+      "duration": "15 months",
+      "status": "Completed",
+      "summary": "A low-rise boutique resort with 18 villas, an infinity pool and open pavilions that frame the Dang valley hills.",
+      "scope": [
+        "Concept & design",
+        "Construction",
+        "Landscape",
+        "Pool engineering"
+      ],
+      "images": [
+        "/images/projects/dang-valley-resort-1.webp",
+        "/images/projects/dang-valley-resort-2.webp",
+        "/images/projects/dang-valley-resort-3.webp"
+      ]
+    },
+    {
+      "slug": "sunwal-community-hospital",
+      "title": "Community Hospital Block",
+      "category": "engineering",
+      "type": "Healthcare",
+      "district": "Nawalparasi",
+      "location": "Sunwal, Nawalparasi",
+      "year": 2025,
+      "area": "19,000 sq ft",
+      "duration": "13 months",
+      "status": "Completed",
+      "summary": "A 50-bed hospital block with OPD, emergency wing and operation theatres, designed for infection control and future vertical expansion.",
+      "scope": [
+        "Structural engineering",
+        "Construction",
+        "Utilities",
+        "Quality control"
+      ],
+      "images": [
+        "/images/projects/sunwal-community-hospital-1.webp",
+        "/images/projects/sunwal-community-hospital-2.webp",
+        "/images/projects/sunwal-community-hospital-3.webp"
+      ]
+    },
+    {
+      "slug": "parasi-modern-home",
+      "title": "Parasi Modern Home",
+      "category": "architectural",
+      "type": "Residential",
+      "district": "Nawalparasi",
+      "location": "Parasi, Nawalparasi",
+      "year": 2025,
+      "area": "2,900 sq ft",
+      "duration": "9 months",
+      "status": "Ongoing",
+      "summary": "A compact modern home with a double-height entry, shaded balconies and an efficient plan for a joint family.",
+      "scope": [
+        "Architectural design",
+        "Structural design",
+        "Construction"
+      ],
+      "images": [
+        "/images/projects/parasi-modern-home-1.webp",
+        "/images/projects/parasi-modern-home-2.webp",
+        "/images/projects/parasi-modern-home-3.webp"
+      ]
+    }
+  ],
+  "transformations": {
+    "eyebrow": "Before & After",
+    "title": "See the transformation, not just the promise.",
+    "intro": "Drag the handle to compare each site before we started with the finished result. Real work, honestly shown.",
+    "items": [
+      {
+        "title": "From bare frame to family villa",
+        "location": "Butwal, Rupandehi",
+        "duration": "11 months",
+        "before": "/images/transform/villa-before.webp",
+        "after": "/images/transform/villa-after.webp",
+        "caption": "RCC frame and scaffolding at month 3 vs. the handed-over villa."
+      },
+      {
+        "title": "Empty shell to living room",
+        "location": "Taulihawa, Kapilvastu",
+        "duration": "4 months",
+        "before": "/images/transform/interior-before.webp",
+        "after": "/images/transform/interior-after.webp",
+        "caption": "Unfinished plaster and bare floor vs. the turnkey interior."
+      },
+      {
+        "title": "Tired storefront, modern facade",
+        "location": "Bhairahawa, Rupandehi",
+        "duration": "6 weeks",
+        "before": "/images/transform/facade-before.webp",
+        "after": "/images/transform/facade-after.webp",
+        "caption": "A weathered shopfront renovated with a new glazed facade and signage."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "title": "A clear, six-step path from idea to handover.",
+    "steps": [
+      {
+        "title": "Consultation & site visit",
+        "text": "We visit your plot, listen to your needs and budget, and explain your options — free of charge."
+      },
+      {
+        "title": "Survey & concept design",
+        "text": "Topographic survey, soil assessment and concept layouts with 3D previews to confirm the direction."
+      },
+      {
+        "title": "Drawings & approvals",
+        "text": "Architectural and structural drawings prepared and submitted for municipality approval on your behalf."
+      },
+      {
+        "title": "Estimate & agreement",
+        "text": "A line-by-line BOQ with material specs and a milestone-based contract. No hidden costs."
+      },
+      {
+        "title": "Construction & quality control",
+        "text": "Dedicated site engineer, material testing, weekly photo updates and safety-first execution."
+      },
+      {
+        "title": "Handover & after-care",
+        "text": "Final inspection, as-built documents, and a workmanship warranty with responsive after-care."
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "Why ABS Builder's",
+    "title": "Credibility you can inspect.",
+    "items": [
+      {
+        "icon": "shield",
+        "title": "Licensed professionals",
+        "text": "Registered engineers and architects sign every drawing."
+      },
+      {
+        "icon": "receipt",
+        "title": "Transparent BOQ",
+        "text": "Know exactly where every rupee goes before work starts."
+      },
+      {
+        "icon": "clock",
+        "title": "On-time delivery",
+        "text": "Milestone schedules tracked weekly and shared with you."
+      },
+      {
+        "icon": "flask",
+        "title": "Tested materials",
+        "text": "Cube tests, certified cement and rebar from approved suppliers."
+      },
+      {
+        "icon": "hardhat",
+        "title": "Supervised sites",
+        "text": "A dedicated engineer on-site — not just a contractor's promise."
+      },
+      {
+        "icon": "badge",
+        "title": "Workmanship warranty",
+        "text": "We stand behind our work long after handover."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Client stories",
+    "title": "Hear it from the people we've built for.",
+    "intro": "Watch our clients talk about their experience — in their own words.",
+    "_videoHowTo": "To add a video: paste the YouTube link into youtubeUrl (watch, youtu.be, shorts and embed links all work). Once a link is added, the video's own YouTube thumbnail replaces the placeholder poster automatically — add \"keepPoster\": true to a video to keep your own poster image instead.",
+    "videos": [
+      {
+        "name": "Ramesh Gurung",
+        "role": "Homeowner",
+        "location": "Butwal, Rupandehi",
+        "project": "Lumbini Heights Villa",
+        "quote": "They finished on schedule and the final bill matched the estimate exactly.",
+        "youtubeUrl": "",
+        "poster": "/images/testimonials/video-1.webp"
+      },
+      {
+        "name": "Sita Chaudhary",
+        "role": "School Principal",
+        "location": "Taulihawa, Kapilvastu",
+        "project": "Heritage Public School",
+        "quote": "Quality of work and the way the team handled our timeline was outstanding.",
+        "youtubeUrl": "",
+        "poster": "/images/testimonials/video-2.webp"
+      },
+      {
+        "name": "Dipak Thapa",
+        "role": "Resort Owner",
+        "location": "Ghorahi, Dang",
+        "project": "Dang Valley Resort",
+        "quote": "From concept to opening day, one team handled everything.",
+        "youtubeUrl": "",
+        "poster": "/images/testimonials/video-3.webp"
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Anita Sharma",
+        "role": "Homeowner",
+        "location": "Bhairahawa",
+        "rating": 5,
+        "quote": "We were nervous about building our first home. The ABS team explained every step, kept us updated with photos every week, and delivered a beautiful house."
+      },
+      {
+        "name": "Prakash Karki",
+        "role": "Business Owner",
+        "location": "Butwal",
+        "rating": 5,
+        "quote": "Our shopping complex was handed over on time and within budget. Structural quality is excellent and the engineers are very professional."
+      },
+      {
+        "name": "Gita Pun",
+        "role": "Homeowner",
+        "location": "Ghorahi, Dang",
+        "rating": 5,
+        "quote": "The interior team turned our empty rooms into a home we love. Attention to detail was impressive."
+      },
+      {
+        "name": "Bishnu Yadav",
+        "role": "Hospital Director",
+        "location": "Sunwal, Nawalparasi",
+        "rating": 5,
+        "quote": "Delivering a hospital block is complex. ABS handled approvals, structure and finishing with discipline and honesty."
+      },
+      {
+        "name": "Kamala Oli",
+        "role": "Homeowner",
+        "location": "Parasi, Nawalparasi",
+        "rating": 4,
+        "quote": "Great design suggestions that saved us money. Communication was prompt throughout the project."
+      }
+    ]
+  },
+  "areas": {
+    "eyebrow": "Where we build",
+    "title": "Four districts. One standard of quality.",
+    "intro": "Our crews and site engineers are based within reach of every project, so response is fast and supervision is real.",
+    "districts": [
+      {
+        "slug": "rupandehi",
+        "name": "Rupandehi",
+        "hub": "Butwal · Bhairahawa",
+        "towns": [
+          "Butwal",
+          "Siddharthanagar (Bhairahawa)",
+          "Tilottama",
+          "Devdaha",
+          "Sainamaina",
+          "Lumbini Sanskritik"
+        ],
+        "description": "Our home district and head office. Residential, commercial and infrastructure projects across the Butwal–Bhairahawa corridor and the Lumbini area.",
+        "map": {
+          "x": 46,
+          "y": 64
+        }
+      },
+      {
+        "slug": "kapilvastu",
+        "name": "Kapilvastu",
+        "hub": "Taulihawa · Krishnanagar",
+        "towns": [
+          "Taulihawa",
+          "Krishnanagar",
+          "Banganga",
+          "Buddhabhumi",
+          "Shivaraj",
+          "Maharajgunj"
+        ],
+        "description": "Schools, homes and public works across the historic Kapilvastu region, from Taulihawa to the border markets.",
+        "map": {
+          "x": 22,
+          "y": 56
+        }
+      },
+      {
+        "slug": "nawalparasi",
+        "name": "Nawalparasi",
+        "hub": "Parasi · Sunwal",
+        "towns": [
+          "Parasi",
+          "Sunwal",
+          "Bardaghat",
+          "Ramgram",
+          "Pratappur"
+        ],
+        "description": "Healthcare, residential and commercial construction along the East-West Highway through Sunwal, Parasi and Bardaghat.",
+        "map": {
+          "x": 72,
+          "y": 70
+        }
+      },
+      {
+        "slug": "dang",
+        "name": "Dang",
+        "hub": "Ghorahi · Tulsipur",
+        "towns": [
+          "Ghorahi",
+          "Tulsipur",
+          "Lamahi",
+          "Gadhawa"
+        ],
+        "description": "Hospitality, residential and interior projects across the Dang valley, from Ghorahi to Tulsipur and Lamahi.",
+        "map": {
+          "x": 30,
+          "y": 24
+        }
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "q": "Do you offer a free site visit and estimate?",
+      "a": "Yes. We visit your plot anywhere in Rupandehi, Kapilvastu, Nawalparasi and Dang at no charge, discuss your requirements and provide an indicative estimate. A detailed BOQ follows once drawings are finalised."
+    },
+    {
+      "q": "Can you help with municipality drawing approval?",
+      "a": "Absolutely. Our architects and engineers prepare the architectural and structural drawings and handle the submission and follow-up with the local municipality on your behalf."
+    },
+    {
+      "q": "How is the construction cost calculated?",
+      "a": "Cost depends on built-up area, structure, finishes and site conditions. We provide a line-by-line Bill of Quantities with material specifications so you can see exactly what you are paying for — before signing."
+    },
+    {
+      "q": "How long does it take to build a house?",
+      "a": "A typical two-and-a-half storey home takes 8–12 months from approval to handover. We give you a milestone schedule in the agreement and track progress weekly."
+    },
+    {
+      "q": "Do you do design-only or interior-only work?",
+      "a": "Yes. You can engage us for architectural design, structural design, supervision or interiors on their own — or choose the complete turnkey package."
+    },
+    {
+      "q": "What is your payment schedule?",
+      "a": "Payments are milestone-based and tied to verified progress on site — never large upfront sums. The schedule is written into your contract."
+    },
+    {
+      "q": "Do you provide a warranty?",
+      "a": "We provide a workmanship warranty and remain available for after-care. Details are included in your contract."
+    }
+  ],
+  "contact": {
+    "eyebrow": "Start your project",
+    "title": "Let's talk about what you want to build.",
+    "intro": "Tell us a little about your project. We reply within 24 hours — or call us right now.",
+    "services": [
+      "Engineering / Construction",
+      "Architectural Design",
+      "Interior Design",
+      "Renovation",
+      "Not sure yet"
+    ],
+    "budgets": [
+      "Under NPR 25 lakh",
+      "NPR 25 – 50 lakh",
+      "NPR 50 lakh – 1 crore",
+      "Above NPR 1 crore",
+      "Not decided"
+    ]
+  },
+  "footer": {
+    "blurb": "Engineering, architecture and interiors — built with discipline across Lumbini Province.",
+    "legal": "ABS Builder's. All rights reserved."
+  },
+  "servicesSection": {
+    "eyebrow": "What we do",
+    "title": "Everything your build needs, under one roof.",
+    "intro": "Three disciplines, one accountable team. Engage us for a single service or the complete turnkey journey."
+  },
+  "projectsSection": {
+    "eyebrow": "Featured projects",
+    "title": "Work that speaks for itself.",
+    "intro": "A selection of homes, commercial buildings, infrastructure and interiors we have delivered across Lumbini Province. Tap any project for details."
+  },
+  "faqSection": {
+    "eyebrow": "Good to know",
+    "title": "Frequently asked questions",
+    "intro": "Straight answers to what clients ask us most. Don't see yours? Call us on the number below."
+  }
+}

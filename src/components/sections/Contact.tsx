@@ -1,6 +1,5 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
 import { useRef, useState, type FormEvent, type ReactNode } from "react";
 import { Icon, type IconName } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
@@ -122,7 +121,7 @@ export function Contact() {
               </InfoCard>
             </Reveal>
             <Reveal delay={180}>
-              <InfoCard icon="map-pin" label="Head office" href={company.mapsLink} external>
+              <InfoCard icon="map-pin" label="Office" href={company.mapsLink} external>
                 {fullAddress()}
               </InfoCard>
             </Reveal>
@@ -152,23 +151,22 @@ export function Contact() {
         <Reveal delay={100}>
           <div className="relative rounded-[2.2rem] bg-white/[0.97] p-6 shadow-[0_50px_100px_-40px_rgb(0_0_0/0.8)] backdrop-blur-2xl sm:p-9">
             <div aria-hidden className="pointer-events-none absolute -right-px -top-px h-28 w-28 rounded-tr-[2.2rem] bg-gradient-to-bl from-brand-600/15 to-transparent" />
-            <h3 className="font-display text-2xl font-semibold text-navy-900">Request a free site visit</h3>
-            <p className="mt-1.5 text-sm text-ink/70">Takes a minute. No obligation, no spam.</p>
+            <h3 className="font-display text-2xl font-semibold text-navy-900">{c.formTitle}</h3>
+            <p className="mt-1.5 text-sm text-ink/70">{c.formNote}</p>
 
-            <AnimatePresence mode="wait" initial={false}>
-              {status === "success" ? (
-                <motion.div key="ok" initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} className="grid place-items-center py-14 text-center" role="status">
-                  <motion.span initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.1 }} className="grid size-20 place-items-center rounded-full bg-emerald-500 text-white shadow-[0_16px_40px_-10px_rgb(16_185_129/0.8)]">
-                    <Icon name="check" className="size-10" strokeWidth={3} />
-                  </motion.span>
-                  <p className="font-display mt-6 text-2xl font-semibold text-navy-900">Thank you — we&apos;ve got it!</p>
-                  <p className="mt-2 max-w-sm text-ink/75">A member of our team will call you within 24 hours. For anything urgent, call {company.phoneDisplay}.</p>
-                  <button type="button" onClick={() => setStatus("idle")} className="mt-6 text-sm font-semibold text-brand-600 underline underline-offset-4">
-                    Send another enquiry
-                  </button>
-                </motion.div>
-              ) : (
-                <motion.form key="form" ref={form} onSubmit={onSubmit} noValidate initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="mt-7 grid gap-4">
+            {status === "success" ? (
+              <div className="animate-pop-in grid place-items-center py-14 text-center" role="status">
+                <span className="grid size-20 place-items-center rounded-full bg-emerald-500 text-white shadow-[0_16px_40px_-10px_rgb(16_185_129/0.8)]">
+                  <Icon name="check" className="size-10" strokeWidth={3} />
+                </span>
+                <p className="font-display mt-6 text-2xl font-semibold text-navy-900">Enquiry received</p>
+                <p className="mt-2 max-w-sm text-ink/75">We will call you within one working day. For anything urgent, call {company.phoneDisplay}.</p>
+                <button type="button" onClick={() => setStatus("idle")} className="mt-6 text-sm font-semibold text-brand-600 underline underline-offset-4">
+                  Send another enquiry
+                </button>
+              </div>
+            ) : (
+              <form ref={form} onSubmit={onSubmit} noValidate className="animate-fade-in mt-7 grid gap-4">
                   {/* honeypot — hidden from people, irresistible to bots */}
                   <div aria-hidden className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
                     <label>
@@ -219,26 +217,22 @@ export function Contact() {
                     <textarea id="f-message" name="message" rows={4} placeholder="Plot size, location, what you'd like to build, timeline…" aria-invalid={!!errors.message} aria-describedby={errors.message ? "f-message-err" : undefined} className={`${fieldCls(errors.message)} resize-y`} />
                   </Field>
 
-                  <AnimatePresence>
-                    {status === "error" && (
-                      <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden" role="alert">
-                        <div className="rounded-2xl border border-brand-500/30 bg-brand-500/8 p-4 text-sm text-brand-700">
-                          <p className="font-semibold">{serverMsg}</p>
-                          <p className="mt-1 text-brand-700/90">
-                            Please reach us directly:{" "}
-                            <a className="font-semibold underline" href={telHref}>
-                              call {company.phoneDisplay}
-                            </a>{" "}
-                            or{" "}
-                            <a className="font-semibold underline" href={fallbackWa} target="_blank" rel="noopener noreferrer">
-                              send on WhatsApp
-                            </a>
-                            .
-                          </p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  {status === "error" && (
+                    <div className="animate-rise-in rounded-2xl border border-brand-500/30 bg-brand-500/8 p-4 text-sm text-brand-700" role="alert">
+                      <p className="font-semibold">{serverMsg}</p>
+                      <p className="mt-1 text-brand-700/90">
+                        Please reach us directly:{" "}
+                        <a className="font-semibold underline" href={telHref}>
+                          call {company.phoneDisplay}
+                        </a>{" "}
+                        or{" "}
+                        <a className="font-semibold underline" href={fallbackWa} target="_blank" rel="noopener noreferrer">
+                          send on WhatsApp
+                        </a>
+                        .
+                      </p>
+                    </div>
+                  )}
 
                   <div className="mt-1 flex flex-col gap-3 sm:flex-row">
                     <button
@@ -269,15 +263,14 @@ export function Contact() {
                     </a>
                   </div>
                   <p className="text-center text-xs text-ink/55">
-                    By sending this form you agree to be contacted about your enquiry. See our{" "}
+                    We use your details only to respond to this enquiry. See our{" "}
                     <a href="/privacy" className="underline underline-offset-2 hover:text-navy-900">
                       privacy policy
                     </a>
                     .
                   </p>
-                </motion.form>
-              )}
-            </AnimatePresence>
+              </form>
+            )}
           </div>
         </Reveal>
       </div>

@@ -16,16 +16,6 @@ function posterFor(v: VideoTestimonial & { keepPoster?: boolean }) {
   return id && !v.keepPoster ? youtubeThumb(id) : v.poster;
 }
 
-function Stars({ n }: { n: number }) {
-  return (
-    <div className="flex gap-0.5 text-amber-400" role="img" aria-label={`${n} out of 5 stars`}>
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Icon key={i} name="star" className={`size-4 ${i < n ? "" : "text-navy-900/15"}`} />
-      ))}
-    </div>
-  );
-}
-
 function VideoCard({ v, big, onOpen }: { v: VideoTestimonial & { keepPoster?: boolean }; big?: boolean; onOpen: () => void }) {
   return (
     <button
@@ -77,8 +67,8 @@ function VideoPlayer({ v }: { v: VideoTestimonial }) {
         <div className="relative grid aspect-video w-full place-items-center overflow-hidden">
           <Image src={v.poster} alt="" fill sizes="60rem" className="object-cover opacity-40 blur-sm" />
           <div className="relative max-w-md px-6 text-center text-white">
-            <p className="font-display text-xl font-semibold">Video coming soon</p>
-            <p className="mt-2 text-sm text-navy-200">We&apos;re editing {v.name}&apos;s story. In the meantime, call us and we&apos;ll connect you with this client directly.</p>
+            <p className="font-display text-xl font-semibold">Video not available yet</p>
+            <p className="mt-2 text-sm text-navy-200">Call us and we can put you in touch with {v.name} directly.</p>
           </div>
         </div>
       )}
@@ -115,7 +105,7 @@ export function Testimonials() {
 
         <div className="mt-16 flex items-end justify-between gap-4">
           <Reveal>
-            <h3 className="font-display text-2xl font-semibold text-navy-900 sm:text-3xl">What clients write about us</h3>
+            <h3 className="font-display text-2xl font-semibold text-navy-900 sm:text-3xl">Written feedback</h3>
           </Reveal>
           <div className="hidden gap-2 sm:flex">
             <button type="button" onClick={() => scroll(-1)} aria-label="Previous reviews" className="glass grid size-11 place-items-center rounded-full text-navy-900 transition hover:bg-white">
@@ -133,7 +123,6 @@ export function Testimonials() {
               <figure className="glass flex h-full flex-col rounded-[1.8rem] p-6 sm:p-7">
                 <Icon name="quote" className="size-8 text-brand-600/70" />
                 <blockquote className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-ink/90">{r.quote}</blockquote>
-                <Stars n={r.rating} />
                 <figcaption className="mt-5 flex items-center gap-3 border-t border-navy-900/8 pt-5">
                   <span aria-hidden className="font-display grid size-11 shrink-0 place-items-center rounded-full bg-gradient-to-br from-navy-700 to-navy-900 text-sm font-semibold text-white">
                     {r.name
@@ -155,11 +144,11 @@ export function Testimonials() {
         </ul>
 
         <Reveal className="mt-6 text-center text-sm text-ink/70">
-          Want to speak to a past client?{" "}
+          Past clients are happy to be contacted on request:{" "}
           <a href={telHref} className="font-semibold text-brand-600 underline decoration-brand-600/30 underline-offset-4 hover:decoration-brand-600">
             Call {company.phoneDisplay}
-          </a>{" "}
-          and we&apos;ll connect you.
+          </a>
+          .
         </Reveal>
       </div>
 

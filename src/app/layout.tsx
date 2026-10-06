@@ -65,7 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={businessSchema()} />
         <JsonLd data={websiteSchema()} />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <a
           href="#main"
           className="fixed left-4 top-4 z-[200] -translate-y-24 rounded-full bg-white px-5 py-3 text-sm font-semibold text-navy-900 shadow-xl transition focus:translate-y-0"

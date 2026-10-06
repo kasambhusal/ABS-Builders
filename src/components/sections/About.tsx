@@ -14,20 +14,20 @@ export function About() {
         {/* collage */}
         <Reveal className="relative mx-auto w-full max-w-xl pb-10 lg:sticky lg:top-28 lg:mx-0">
           <div className="relative aspect-[4/4.4] w-[86%] overflow-hidden rounded-[2.2rem] shadow-[0_40px_80px_-30px_rgb(8_34_82/0.55)] ring-1 ring-navy-900/10">
-            <Image src={about.image} alt="Architectural floor plan and elevation drawings prepared by ABS Builder's" fill sizes="(min-width:1024px) 30rem, 80vw" className="object-cover" />
+            <Image src={about.image} alt="Floor plan and elevation drawings" fill sizes="(min-width:1024px) 30rem, 80vw" className="object-cover" />
           </div>
           <div className="absolute -bottom-8 right-0 aspect-[4/3] w-[58%] overflow-hidden rounded-[1.8rem] border-[6px] border-white shadow-[0_30px_60px_-24px_rgb(8_34_82/0.6)]">
-            <Image src={about.secondaryImage} alt="Reinforced concrete frame under construction with site crane" fill sizes="20rem" className="object-cover" />
+            <Image src={about.secondaryImage} alt="Reinforced concrete frame under construction" fill sizes="20rem" className="object-cover" />
           </div>
           <div className="glass animate-float absolute -left-3 top-[10%] rounded-3xl px-5 py-4 sm:-left-8">
-            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-brand-600">Established</p>
+            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-brand-600">Established in</p>
             <p className="font-display text-3xl font-semibold text-navy-900">{company.foundedYear}</p>
           </div>
           <div className="glass animate-float-slow absolute bottom-10 left-2 hidden items-center gap-3 rounded-full py-2.5 pl-3 pr-5 [animation-delay:-4s] sm:flex">
             <span className="grid size-9 place-items-center rounded-full bg-navy-900 text-white">
               <Icon name="hardhat" className="size-[1.1rem]" />
             </span>
-            <span className="text-sm font-semibold text-navy-900">On-site engineers</span>
+            <span className="text-sm font-semibold text-navy-900">Site engineer on every project</span>
           </div>
         </Reveal>
 
@@ -57,18 +57,9 @@ export function About() {
             ))}
           </ul>
 
-          <Reveal delay={120} className="mt-9">
-            <figure className="relative border-l-[3px] border-brand-600 pl-5">
-              <blockquote className="font-display text-lg font-medium leading-snug text-navy-900 sm:text-xl">“{about.mission}”</blockquote>
-              <figcaption className="mt-3 text-sm text-ink/70">
-                <span className="font-semibold text-navy-900">{about.founder.name}</span> · {about.founder.role}
-              </figcaption>
-            </figure>
-          </Reveal>
-
-          <Reveal delay={160} className="mt-10 flex flex-wrap gap-3">
+          <Reveal delay={120} className="mt-10 flex flex-wrap gap-3">
             <ButtonLink href="/#contact" icon="arrow-right">
-              Book a free consultation
+              Request a site visit
             </ButtonLink>
             <ButtonLink href={telHref} variant="glass-light" iconLeft="phone">
               {company.phoneDisplay}

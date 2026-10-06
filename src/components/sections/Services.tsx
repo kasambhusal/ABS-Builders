@@ -55,7 +55,7 @@ export function Services() {
                     href="/#contact"
                     className="mt-8 inline-flex items-center gap-2 pt-1 text-sm font-semibold text-white transition group-hover:gap-3.5"
                   >
-                    Discuss {svc.title.toLowerCase()} <Icon name="arrow-right" className="size-4" />
+                    Enquire about {svc.title.toLowerCase()} <Icon name="arrow-right" className="size-4" />
                   </Link>
                 </div>
               </SpotlightCard>

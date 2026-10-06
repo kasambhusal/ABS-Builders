@@ -1,6 +1,5 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { useState } from "react";
 import { CompareSlider } from "@/components/ui/CompareSlider";
@@ -31,29 +30,23 @@ export function Transformations() {
                 altBefore={`${item.title} — before`}
                 altAfter={`${item.title} — after`}
               />
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={active}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.25 }}
-                  className="flex flex-col gap-3 px-3 pb-3 pt-5 sm:flex-row sm:items-end sm:justify-between sm:px-4"
-                >
-                  <div>
-                    <h3 className="font-display text-xl font-semibold text-white sm:text-2xl">{item.title}</h3>
-                    <p className="mt-1.5 max-w-xl text-sm text-navy-200">{item.caption}</p>
-                  </div>
-                  <ul className="flex shrink-0 flex-wrap gap-2 text-xs font-medium text-white">
-                    <li className="glass-dark inline-flex items-center gap-1.5 rounded-full px-3 py-1.5">
-                      <Icon name="map-pin" className="size-3.5 text-brand-300" /> {item.location}
-                    </li>
-                    <li className="glass-dark inline-flex items-center gap-1.5 rounded-full px-3 py-1.5">
-                      <Icon name="clock" className="size-3.5 text-brand-300" /> {item.duration}
-                    </li>
-                  </ul>
-                </motion.div>
-              </AnimatePresence>
+              <div
+                key={active}
+                className="animate-rise-in flex flex-col gap-3 px-3 pb-3 pt-5 sm:flex-row sm:items-end sm:justify-between sm:px-4"
+              >
+                <div>
+                  <h3 className="font-display text-xl font-semibold text-white sm:text-2xl">{item.title}</h3>
+                  <p className="mt-1.5 max-w-xl text-sm text-navy-200">{item.caption}</p>
+                </div>
+                <ul className="flex shrink-0 flex-wrap gap-2 text-xs font-medium text-white">
+                  <li className="glass-dark inline-flex items-center gap-1.5 rounded-full px-3 py-1.5">
+                    <Icon name="map-pin" className="size-3.5 text-brand-300" /> {item.location}
+                  </li>
+                  <li className="glass-dark inline-flex items-center gap-1.5 rounded-full px-3 py-1.5">
+                    <Icon name="clock" className="size-3.5 text-brand-300" /> {item.duration}
+                  </li>
+                </ul>
+              </div>
             </div>
           </Reveal>
 

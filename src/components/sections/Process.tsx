@@ -1,18 +1,26 @@
 "use client";
 
-import { motion, useScroll, useSpring } from "motion/react";
 import { useRef } from "react";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/lib/site";
+import { useScrollEffect } from "@/lib/useScrollEffect";
 
 const { process: p } = site;
 
 export function Process() {
   const track = useRef<HTMLOListElement>(null);
-  const { scrollYProgress } = useScroll({ target: track, offset: ["start 70%", "end 55%"] });
-  const scaleY = useSpring(scrollYProgress, { stiffness: 120, damping: 28, restDelta: 0.001 });
+  const fill = useRef<HTMLSpanElement>(null);
+
+  // Fills the line as the list scrolls from 70% of the viewport height up past 55%.
+  useScrollEffect(() => {
+    if (!track.current || !fill.current) return;
+    const { top, height } = track.current.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const progress = (0.7 * vh - top) / (0.15 * vh + height);
+    fill.current.style.transform = `scaleY(${Math.min(1, Math.max(0, progress))})`;
+  });
 
   return (
     <section id="process" aria-labelledby="process-title" className="bg-light-mesh section-y relative overflow-hidden">
@@ -21,10 +29,10 @@ export function Process() {
           <SectionHeading eyebrow={p.eyebrow} title={p.title} id="process-title" />
           <Reveal delay={200} className="mt-8 hidden lg:block">
             <div className="glass rounded-3xl p-6">
-              <p className="font-display text-lg font-semibold text-navy-900">Ready for step one?</p>
-              <p className="mt-2 text-sm text-ink/75">The first site visit and estimate are always free — no obligation.</p>
+              <p className="font-display text-lg font-semibold text-navy-900">Start with step one</p>
+              <p className="mt-2 text-sm text-ink/75">The first site visit and indicative estimate are free.</p>
               <ButtonLink href="/#contact" icon="arrow-right" className="mt-5 py-3! text-sm!">
-                Book a site visit
+                Request a site visit
               </ButtonLink>
             </div>
           </Reveal>
@@ -32,9 +40,10 @@ export function Process() {
 
         <ol ref={track} className="relative grid gap-5">
           <span aria-hidden className="absolute bottom-6 left-[1.7rem] top-6 w-0.5 rounded-full bg-navy-900/10 sm:left-[2.15rem]" />
-          <motion.span
+          <span
+            ref={fill}
             aria-hidden
-            style={{ scaleY }}
+            style={{ transform: "scaleY(0)" }}
             className="absolute bottom-6 left-[1.7rem] top-6 w-0.5 origin-top rounded-full bg-gradient-to-b from-navy-600 to-brand-500 sm:left-[2.15rem]"
           />
           {p.steps.map((step, i) => (

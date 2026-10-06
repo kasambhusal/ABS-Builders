@@ -1,4 +1,4 @@
-import { company, districts, getSiteUrl, site } from "@/lib/site";
+import { company, districts, getSiteUrl, site, youtubeId, youtubeThumb } from "@/lib/site";
 
 const abs = (path: string) => `${getSiteUrl()}${path}`;
 
@@ -76,5 +76,21 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.name, item: abs(it.path) })),
+  };
+}
+
+/** VideoObject for the featured company video, or null until a YouTube link is added. */
+export function videoSchema() {
+  const v = site.featuredVideo;
+  const id = youtubeId(v.youtubeUrl);
+  if (!id) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: v.title,
+    description: v.intro,
+    thumbnailUrl: [youtubeThumb(id)],
+    uploadDate: v.uploadDate,
+    embedUrl: `https://www.youtube-nocookie.com/embed/${id}`,
   };
 }

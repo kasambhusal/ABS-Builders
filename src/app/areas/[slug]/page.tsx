@@ -42,7 +42,7 @@ export default async function AreaPage({ params }: PageProps) {
   const related = projectsInDistrict(d.name);
   const faqs = [
     { q: `Do you build houses and commercial buildings in ${d.name}?`, a: `Yes. ${company.name} designs and constructs homes, commercial buildings, institutional projects and interiors across ${d.name} District, including ${d.towns.join(", ")}.` },
-    { q: `Is the site visit in ${d.name} really free?`, a: `Yes. We visit your plot anywhere in ${d.name} at no charge, discuss your requirements and give you an indicative estimate before you commit to anything.` },
+    { q: `Is the site visit in ${d.name} free?`, a: `Yes. We visit your plot anywhere in ${d.name} at no charge, discuss your requirements and give you an indicative estimate before you commit to anything.` },
     { q: `Can you handle municipality approval in ${d.name}?`, a: `We prepare architectural and structural drawings and handle submission and follow-up with the local municipality on your behalf.` },
     ...site.faqs.slice(2, 4),
   ];
@@ -59,7 +59,7 @@ export default async function AreaPage({ params }: PageProps) {
       />
 
       <section className="bg-navy-mesh relative isolate overflow-hidden pb-24 pt-36 sm:pt-44">
-        <div aria-hidden className="bg-blueprint-fine absolute inset-0 -z-10 animate-grid opacity-60 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_20%,#000,transparent)]" />
+        <div aria-hidden className="bg-blueprint-fine absolute inset-0 -z-10 opacity-60 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_20%,#000,transparent)]" />
         <div className="container-x">
           <nav aria-label="Breadcrumb" className="text-sm text-navy-300">
             <ol className="flex items-center gap-2">
@@ -88,7 +88,7 @@ export default async function AreaPage({ params }: PageProps) {
           </ul>
           <div className="mt-10 flex flex-wrap gap-3">
             <ButtonLink href="#contact" icon="arrow-right">
-              Get a free site visit in {d.name}
+              Request a site visit in {d.name}
             </ButtonLink>
             <ButtonLink href={telHref} variant="glass" iconLeft="phone">
               {company.phoneDisplay}
@@ -99,7 +99,7 @@ export default async function AreaPage({ params }: PageProps) {
 
       <section className="bg-light-mesh section-y">
         <div className="container-x">
-          <SectionHeading eyebrow={`Services in ${d.name}`} title={`What we build for ${d.name} clients`} />
+          <SectionHeading eyebrow={`Services in ${d.name}`} title={`What we offer in ${d.name}`} />
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {site.services.map((s, i) => (
               <Reveal key={s.id} delay={i * 90}>
@@ -124,7 +124,7 @@ export default async function AreaPage({ params }: PageProps) {
       {related.length > 0 && (
         <section className="bg-navy-mesh section-y">
           <div className="container-x">
-            <SectionHeading eyebrow="Recent work" title={`Projects we've delivered in ${d.name}`} tone="dark" />
+            <SectionHeading eyebrow="Projects" title={`Projects completed in ${d.name}`} tone="dark" />
             <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((p, i) => (
                 <Reveal as="li" key={p.slug} delay={i * 80}>
@@ -147,7 +147,7 @@ export default async function AreaPage({ params }: PageProps) {
 
       <section className="bg-light-mesh section-y">
         <div className="container-x max-w-4xl">
-          <SectionHeading eyebrow="FAQ" title={`Building in ${d.name}: common questions`} />
+          <SectionHeading eyebrow="FAQ" title={`Questions about building in ${d.name}`} />
           <dl className="mt-10 grid gap-4">
             {faqs.map((f) => (
               <Reveal key={f.q}>

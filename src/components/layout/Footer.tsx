@@ -13,6 +13,7 @@ const SOCIAL: { key: keyof typeof company.social; icon: IconName; label: string 
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const registrations = company.registrations.filter((r) => r.value);
   return (
     <footer className="relative overflow-hidden bg-navy-950 pb-28 pt-20 text-navy-200 md:pb-10">
       <div aria-hidden className="bg-blueprint pointer-events-none absolute inset-0 opacity-40 [mask-image:linear-gradient(180deg,transparent,#000_30%,transparent)]" />
@@ -108,15 +109,23 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-xs text-navy-400 sm:flex-row sm:items-center">
-          <p>
-            © {year} {site.footer.legal}
-          </p>
-          <div className="flex items-center gap-6">
+        <div className="mt-16 border-t border-white/10 pt-8 text-xs text-navy-400">
+          {registrations.length > 0 && (
+            <ul className="mb-5 flex flex-wrap gap-x-8 gap-y-2">
+              {registrations.map((r) => (
+                <li key={r.label}>
+                  {r.label}: <span className="font-medium text-navy-200">{r.value}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+            <p>
+              © {year} {site.footer.legal}
+            </p>
             <Link href="/privacy" className="transition hover:text-white">
               Privacy Policy
             </Link>
-            <span>Rupandehi · Kapilvastu · Nawalparasi · Dang</span>
           </div>
         </div>
       </div>

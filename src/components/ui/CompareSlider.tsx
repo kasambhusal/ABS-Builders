@@ -1,9 +1,16 @@
 "use client";
 
-import { animate } from "motion/react";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState, type KeyboardEvent, type PointerEvent } from "react";
 import { Icon } from "./Icon";
+
+/** Hint animation: 50 → 18 → 82 → 50, each leg eased in/out. */
+const SWEEP = [
+  { to: 18, ms: 700 },
+  { to: 82, ms: 1100 },
+  { to: 50, ms: 700 },
+];
+const ease = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
 
 interface CompareSliderProps {
   before: string;
@@ -29,25 +36,39 @@ export function CompareSlider({ before, after, altBefore, altAfter }: CompareSli
   useEffect(() => {
     const el = box.current;
     if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let controls: ReturnType<typeof animate> | undefined;
+    let frame = 0;
+    let delay = 0;
+    const play = () => {
+      let from = 50;
+      let leg = 0;
+      let start = performance.now();
+      const tick = (now: number) => {
+        if (touched.current) return;
+        const { to, ms } = SWEEP[leg];
+        const t = Math.min((now - start) / ms, 1);
+        setPos(from + (to - from) * ease(t));
+        if (t < 1) frame = requestAnimationFrame(tick);
+        else if (++leg < SWEEP.length) {
+          from = to;
+          start = now;
+          frame = requestAnimationFrame(tick);
+        }
+      };
+      frame = requestAnimationFrame(tick);
+    };
     const io = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;
         io.disconnect();
-        if (touched.current) return;
-        controls = animate(50, [50, 18, 82, 50], {
-          duration: 2.8,
-          ease: "easeInOut",
-          delay: 0.4,
-          onUpdate: (v) => !touched.current && setPos(v),
-        });
+        if (!touched.current) delay = window.setTimeout(play, 400);
       },
       { threshold: 0.55 },
     );
     io.observe(el);
     return () => {
       io.disconnect();
-      controls?.stop();
+      clearTimeout(delay);
+      cancelAnimationFrame(frame);
     };
   }, []);
 

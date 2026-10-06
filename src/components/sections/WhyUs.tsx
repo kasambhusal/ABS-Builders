@@ -31,15 +31,15 @@ export function WhyUs() {
         <Reveal className="mt-12">
           <div className="glass-dark flex flex-col items-start justify-between gap-6 rounded-[2rem] p-7 sm:flex-row sm:items-center sm:p-9">
             <div>
-              <p className="font-display text-2xl font-semibold text-white sm:text-[1.7rem]">Want to see a site in progress?</p>
-              <p className="mt-2 text-navy-200">We&apos;re happy to take you to a live project — call us to arrange a visit.</p>
+              <p className="font-display text-2xl font-semibold text-white sm:text-[1.7rem]">{w.cta.title}</p>
+              <p className="mt-2 text-navy-200">{w.cta.text}</p>
             </div>
             <div className="flex flex-wrap gap-3">
               <ButtonLink href={telHref} iconLeft="phone">
                 {company.phoneDisplay}
               </ButtonLink>
               <ButtonLink href="/#contact" variant="glass" icon="arrow-right">
-                Send an enquiry
+                Request a site visit
               </ButtonLink>
             </div>
           </div>

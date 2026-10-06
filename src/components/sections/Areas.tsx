@@ -1,6 +1,5 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -55,7 +54,7 @@ export function Areas() {
           <Reveal>
             <div className="glass-dark relative aspect-[5/4] overflow-hidden rounded-[2.2rem] sm:aspect-[5/3.6] lg:aspect-auto lg:h-full lg:min-h-[28rem]">
               <MapBackdrop />
-              <p className="absolute left-5 top-5 rounded-full bg-white/10 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-navy-200">Lumbini Province · illustrative map</p>
+              <p className="absolute left-5 top-5 rounded-full bg-white/10 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-navy-200">Lumbini Province · schematic map</p>
               {districts.map((d) => {
                 const on = d.slug === active;
                 return (
@@ -90,23 +89,14 @@ export function Areas() {
                     type="button"
                     onClick={() => setActive(d.slug)}
                     aria-pressed={d.slug === active}
-                    className={`relative flex-1 whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-medium transition ${d.slug === active ? "text-navy-950" : "text-navy-100 hover:text-white"}`}
+                    className={`flex-1 whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-medium transition-colors duration-300 ${d.slug === active ? "bg-white text-navy-950" : "text-navy-100 hover:text-white"}`}
                   >
-                    {d.slug === active && <motion.span layoutId="district-pill" className="absolute inset-0 rounded-full bg-white" transition={{ type: "spring", stiffness: 420, damping: 32 }} />}
-                    <span className="relative">{d.name}</span>
+                    {d.name}
                   </button>
                 ))}
               </div>
 
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={district.slug}
-                  initial={{ opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.3 }}
-                  className="glass-dark flex flex-1 flex-col rounded-[2.2rem] p-6 sm:p-8"
-                >
+              <div key={district.slug} className="glass-dark animate-rise-in flex flex-1 flex-col rounded-[2.2rem] p-6 sm:p-8">
                   <p className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-brand-300">{district.hub}</p>
                   <h3 className="font-display mt-2 text-3xl font-semibold text-white">{district.name} District</h3>
                   <p className="mt-3 text-sm leading-relaxed text-navy-200 sm:text-base">{district.description}</p>
@@ -123,7 +113,7 @@ export function Areas() {
                   {related.length > 0 && (
                     <>
                       <h4 className="mt-6 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-navy-300">
-                        {related.length} featured project{related.length > 1 ? "s" : ""} here
+                        {related.length} project{related.length > 1 ? "s" : ""} completed here
                       </h4>
                       <ul className="mt-3 grid grid-cols-3 gap-3">
                         {related.slice(0, 3).map((p) => (
@@ -144,8 +134,7 @@ export function Areas() {
                     Construction services in {district.name}
                     <Icon name="arrow-right" className="size-4 transition group-hover:translate-x-1" />
                   </Link>
-                </motion.div>
-              </AnimatePresence>
+              </div>
             </div>
           </Reveal>
         </div>

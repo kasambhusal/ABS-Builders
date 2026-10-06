@@ -1,8 +1,9 @@
 import { Counter } from "@/components/ui/Counter";
 import { Reveal } from "@/components/ui/Reveal";
-import { site } from "@/lib/site";
+import { company, site } from "@/lib/site";
 
 export function StatsBand() {
+  const year = new Date().getFullYear();
   return (
     <section aria-label="ABS Builder's in numbers" className="relative z-10 -mt-24 sm:-mt-28">
       <div className="container-x">
@@ -16,7 +17,7 @@ export function StatsBand() {
                 <dt className="order-2 mt-3 text-xs font-medium uppercase tracking-[0.14em] text-ink/70 sm:text-[0.8rem]">{s.label}</dt>
                 <dd className="order-1 font-display text-[2.6rem] font-semibold leading-none tracking-tight text-navy-900 sm:text-5xl">
                   <span className="text-gradient-brand">
-                    <Counter value={s.value} suffix={s.suffix} />
+                    <Counter value={"fromFoundedYear" in s && s.fromFoundedYear ? year - company.foundedYear : s.value} suffix={s.suffix} />
                   </span>
                 </dd>
               </div>

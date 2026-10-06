@@ -1,6 +1,5 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
@@ -22,21 +21,15 @@ export function FloatingActions() {
     <>
       {/* Desktop / tablet: floating stack */}
       <div className="fixed bottom-6 right-6 z-40 hidden flex-col items-center gap-3 md:flex">
-        <AnimatePresence>
-          {showTop && (
-            <motion.button
-              type="button"
-              aria-label="Back to top"
-              initial={{ opacity: 0, scale: 0.6, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.6, y: 10 }}
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="glass-nav grid size-11 place-items-center rounded-full text-white transition hover:bg-navy-800"
-            >
-              <Icon name="arrow-up" className="size-5" />
-            </motion.button>
-          )}
-        </AnimatePresence>
+        <button
+          type="button"
+          aria-label="Back to top"
+          tabIndex={showTop ? 0 : -1}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className={`glass-nav grid size-11 place-items-center rounded-full text-white transition duration-300 hover:bg-navy-800 ${showTop ? "" : "pointer-events-none translate-y-2 opacity-0"}`}
+        >
+          <Icon name="arrow-up" className="size-5" />
+        </button>
         <a
           href={whatsappHref(WA_MESSAGE)}
           target="_blank"
@@ -71,7 +64,7 @@ export function FloatingActions() {
             <Icon name="whatsapp" className="size-4 text-[#4ade80]" /> Chat
           </a>
           <Link href="/#contact" className="inline-flex items-center justify-center gap-2 rounded-2xl bg-brand-600 py-3 text-sm font-semibold text-white">
-            Free Quote <Icon name="arrow-right" className="size-4" />
+            Free site visit <Icon name="arrow-right" className="size-4" />
           </Link>
         </div>
       </div>

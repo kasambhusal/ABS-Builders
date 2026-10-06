@@ -87,7 +87,7 @@ export function Hero() {
       {/* animated blueprint grid */}
       <div
         aria-hidden
-        className="bg-blueprint-fine absolute inset-0 -z-10 animate-grid opacity-70 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_30%,#000,transparent)]"
+        className="bg-blueprint-fine absolute inset-0 -z-10 opacity-70 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_30%,#000,transparent)]"
       />
       <div aria-hidden className="absolute -right-40 top-10 -z-10 size-[34rem] rounded-full bg-brand-600/20 blur-[120px]" />
       <HeroScene />
@@ -124,8 +124,13 @@ export function Hero() {
                     strokeLinecap="round"
                   />
                 </svg>
-              </span>{" "}
-              <Words text={after} start={250 + (beforeWords + 1) * 70} />
+              </span>
+              {after && (
+                <>
+                  {" "}
+                  <Words text={after} start={250 + (beforeWords + 1) * 70} />
+                </>
+              )}
             </h1>
 
             <p className="hero-in mt-7 max-w-xl text-pretty text-base leading-relaxed text-navy-200 sm:text-lg" style={{ "--d": "900ms" } as React.CSSProperties}>

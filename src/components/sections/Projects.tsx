@@ -1,6 +1,5 @@
 "use client";
 
-import { AnimatePresence, LayoutGroup, motion } from "motion/react";
 import Image from "next/image";
 import { useCallback, useMemo, useState } from "react";
 import { ButtonLink } from "@/components/ui/Button";
@@ -14,16 +13,15 @@ type CategoryFilter = "all" | Category;
 
 const CATEGORY_ORDER: Category[] = ["engineering", "architectural", "interiors"];
 
-function Pill({ active, onClick, children, group }: { active: boolean; onClick: () => void; children: React.ReactNode; group: string }) {
+function Pill({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
     <button
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`relative shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-colors ${active ? "text-white" : "text-navy-900/75 hover:text-navy-900"}`}
+      className={`shrink-0 rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300 ${active ? "bg-navy-900 text-white shadow-lg shadow-navy-900/30" : "text-navy-900/75 hover:text-navy-900"}`}
     >
-      {active && <motion.span layoutId={`pill-${group}`} className="absolute inset-0 rounded-full bg-navy-900 shadow-lg shadow-navy-900/30" transition={{ type: "spring", stiffness: 420, damping: 32 }} />}
-      <span className="relative">{children}</span>
+      {children}
     </button>
   );
 }
@@ -47,11 +45,9 @@ function ProjectDetail({ project, onClose, onStep }: { project: Project; onClose
     <div className="grid md:grid-cols-[1.2fr_1fr]">
       <div className="bg-navy-950 p-3 sm:p-4">
         <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem]">
-          <AnimatePresence mode="wait">
-            <motion.div key={project.images[index]} initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.35 }} className="absolute inset-0">
-              <Image src={project.images[index]} alt={`${project.title} — view ${index + 1}`} fill sizes="(min-width:768px) 40rem, 100vw" className="object-cover" priority />
-            </motion.div>
-          </AnimatePresence>
+          <div key={project.images[index]} className="animate-fade-in absolute inset-0">
+            <Image src={project.images[index]} alt={`${project.title} — view ${index + 1}`} fill sizes="(min-width:768px) 40rem, 100vw" className="object-cover" priority />
+          </div>
           <div className="absolute inset-x-0 bottom-0 flex items-center justify-between p-3">
             <button type="button" onClick={() => onStep(-1)} aria-label="Previous project" className="glass-dark grid size-10 place-items-center rounded-full text-white transition hover:bg-white/20">
               <Icon name="chevron-left" className="size-5" />
@@ -110,7 +106,7 @@ function ProjectDetail({ project, onClose, onStep }: { project: Project; onClose
 
         <div className="mt-8 flex flex-wrap gap-3">
           <a href="#contact" onClick={goContact} className="group inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-500">
-            Discuss a similar project <Icon name="arrow-right" className="size-4 transition group-hover:translate-x-1" />
+            Enquire about a similar project <Icon name="arrow-right" className="size-4 transition group-hover:translate-x-1" />
           </a>
           <ButtonLink href={telHref} variant="glass-light" iconLeft="phone" className="px-5! py-3! text-sm!">
             Call
@@ -152,43 +148,33 @@ export function Projects() {
         </div>
 
         <Reveal className="mt-10">
-          <LayoutGroup>
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div className="glass no-scrollbar -mx-1 flex max-w-full gap-1 overflow-x-auto rounded-full p-1.5" role="group" aria-label="Filter by service">
-                <Pill group="cat" active={category === "all"} onClick={() => setCategory("all")}>
+                <Pill active={category === "all"} onClick={() => setCategory("all")}>
                   All <span className="opacity-60">({projects.length})</span>
                 </Pill>
                 {CATEGORY_ORDER.map((c) => (
-                  <Pill key={c} group="cat" active={category === c} onClick={() => setCategory(c)}>
+                  <Pill key={c} active={category === c} onClick={() => setCategory(c)}>
                     {CATEGORY_LABEL[c]} <span className="opacity-60">({projects.filter((p) => p.category === c).length})</span>
                   </Pill>
                 ))}
               </div>
               <div className="glass no-scrollbar -mx-1 flex max-w-full gap-1 overflow-x-auto rounded-full p-1.5" role="group" aria-label="Filter by district">
-                <Pill group="dist" active={district === "all"} onClick={() => setDistrict("all")}>
+                <Pill active={district === "all"} onClick={() => setDistrict("all")}>
                   All districts
                 </Pill>
                 {districts.map((d) => (
-                  <Pill key={d.slug} group="dist" active={district === d.name} onClick={() => setDistrict(d.name)}>
+                  <Pill key={d.slug} active={district === d.name} onClick={() => setDistrict(d.name)}>
                     {d.name}
                   </Pill>
                 ))}
               </div>
             </div>
-          </LayoutGroup>
         </Reveal>
 
-        <motion.ul layout className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
-            {filtered.map((p) => (
-              <motion.li
-                key={p.slug}
-                layout
-                initial={{ opacity: 0, scale: 0.92 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.92 }}
-                transition={{ type: "spring", stiffness: 280, damping: 30 }}
-              >
+        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((p, i) => (
+            <li key={p.slug} className="animate-pop-in" style={{ animationDelay: `${i * 45}ms` }}>
                 <button
                   type="button"
                   onClick={() => setSelected(p.slug)}
@@ -224,10 +210,9 @@ export function Projects() {
                     </p>
                   </div>
                 </button>
-              </motion.li>
-            ))}
-          </AnimatePresence>
-        </motion.ul>
+            </li>
+          ))}
+        </ul>
 
         {filtered.length === 0 && (
           <p className="glass mt-10 rounded-3xl p-10 text-center text-ink/80">
